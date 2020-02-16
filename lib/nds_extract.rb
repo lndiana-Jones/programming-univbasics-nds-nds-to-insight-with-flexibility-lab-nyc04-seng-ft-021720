@@ -33,6 +33,40 @@ end
 
 # Your code after this point
 
+def movies_with_director_key(name, movies_collection)
+ 
+  count = 0 
+  
+  while count < movies_collection.length
+    movies_collection[count][:director_name] = name
+  
+    count += 1 
+  end
+  
+  movies_collection
+  
+end
+
+
+def gross_per_studio(collection)
+  gross_total = {}
+  i = 0 
+    while i < collection.length
+      current_studio = collection[i][:studio]
+      current_movie_gross = collection[i][:worldwide_gross]
+        if !gross_total[current_studio]
+          gross_total[current_studio] = current_movie_gross
+        else
+          gross_total[current_studio] += current_movie_gross
+        end
+      i += 1
+    end
+  
+ gross_total 
+ 
+end
+
+
 
 
 def movies_with_directors_set(source)
